@@ -1,0 +1,71 @@
+{% extends 'registro/inicial.html' %}
+
+{% load static %}
+
+
+
+{% block css %}
+  <style>
+    .required:after{
+      content: "*";
+      color: red;
+    }
+  </style>
+{% endblock css %}
+
+
+{% block content %}
+
+<div>
+  <form class="form-horizontal" action="{% url 'registro' %}" method="POST">
+    {% csrf_token %} 
+    <div>
+      <label for="nome" class="required" >Nome</label>
+      <input id="nome" type="text" name="nome">
+    </div>
+
+    <div>
+      <label for="cargo" class="required" >Cargo</label>
+      <input id="cargo" type="text" name="cargo">
+    </div>
+
+    <div>
+      <label for="cartao" class="required">cartão</label>
+      <input id="cartao" type="text" value="default" name="cartao">
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div>
+  <button>Click me</button>
+</div>
+
+
+<div>{{ form.nome }}</div>
+<div>{{ form.cargo }}</div>
+<div>{{ form.cartao }}</div>
+
+
+
+
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+  <script src="{% static 'registro/main.js'%}" ></script>
+{% endblock scripts %}
+
+<!--
+<form action="Registro" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+-->
+
+
+
+
