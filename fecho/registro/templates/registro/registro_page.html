@@ -5,48 +5,47 @@
 
 
 {% block css %}
+
   <style>
-    .required:after{
-      content: "*";
-      color: red;
-    }
+    <link rel="stylesheet" href="/registro/main.css">
   </style>
 {% endblock css %}
 
 
 {% block content %}
+<body>
+  <div class="container">
+    <form class="form-horizontal" id="login" action="{% url 'registro' %}" method="POST">
+      {% csrf_token %} 
+      <div>
+        <label for="nome" class="required" >Nome</label>
+        <input id="nome" type="text" name="nome">
+      </div>
 
-<div>
-  <form class="form-horizontal" action="{% url 'registro' %}" method="POST">
-    {% csrf_token %} 
-    <div>
-      <label for="nome" class="required" >Nome</label>
-      <input id="nome" type="text" name="nome">
-    </div>
+      <div>
+        <label for="cargo" class="required" >Cargo</label>
+        <input id="cargo" type="text" name="cargo">
+      </div>
 
-    <div>
-      <label for="cargo" class="required" >Cargo</label>
-      <input id="cargo" type="text" name="cargo">
-    </div>
-
-    <div>
-      <label for="cartao" class="required">cartão</label>
-      <input id="cartao" type="text" value="default" name="cartao">
-    </div>
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-<div>
-  <button>Click me</button>
-</div>
+      <div>
+        <label for="cartao" class="required">cartão</label>
+        <input id="cartao" type="text" value="default" name="cartao">
+      </div>
+      <div>
+        <button>Capturar valor da Tag </button>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
 
 
+
+<!--
 <div>{{ form.nome }}</div>
 <div>{{ form.cargo }}</div>
 <div>{{ form.cartao }}</div>
-
-
+-->
 
 
 

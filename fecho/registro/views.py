@@ -51,21 +51,12 @@ def resposta(request):
 def resposta_arduino(request):
     #valor = []
     if request.method == 'GET':
-        #
-        
         valor = subprocess.check_output(["./registro/receive"])
         #print(valor.decode("utf-8"))
-        #valor2 = captura()
         tratado = valor.decode("utf-8")
         json_envio = json.loads(tratado)
-        print("valor tratado",tratado)
-        print(type(tratado))
+        #print("valor tratado",tratado)
         return JsonResponse(json_envio)
-        #print(valor)
         
-    
-
-    #return JsonResponse({'texto':resultado})
-
 
 # Create your views here.

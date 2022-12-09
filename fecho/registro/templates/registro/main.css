@@ -1,0 +1,21 @@
+body{
+
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	font-size: 18px;
+	background: #00008b;
+	background-size: cover;
+}
+
+.container {
+	width: 400px;
+	max-width: 400px;
+	margin: 1rem;
+	padding: 2rem;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+	border-radius: var(--border-radius);
+	background: #ffffff;
+}
