@@ -10,4 +10,6 @@ e criar as funções.
 - a leitura de serial é feita por um código em C, que utiliza bibliotecas do sistema e código embarcado para a leitura.
 (O uso de flags é muito legal).
 
-- próximo passo é a implementação do CRUD.
+Inserção acontece, porém por meio de testes realizados com o Postman, é visto que a string criada pelo front-end não é aceita pelo JSONParser do RESTApi, então:
+
+- próximo passo é tratar a requisição para um formato aceito pelo JSONParser

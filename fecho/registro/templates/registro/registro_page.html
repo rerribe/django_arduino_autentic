@@ -14,9 +14,10 @@
 
 {% block content %}
 <body>
+  
   <div class="container">
-    <form class="form-horizontal" id="login" action="{% url 'registro' %}" method="POST">
-      {% csrf_token %} 
+    <form class="form-horizontal" id="login" action="{% url 'registro_user' %}" method="POST">
+     
       <div>
         <label for="nome" class="required" >Nome</label>
         <input id="nome" type="text" name="nome">
@@ -30,18 +31,18 @@
       <div>
         <label for="cartao" class="required">cartão</label>
         <input id="cartao" type="text" value="default" name="cartao">
+        
       </div>
-      <div>
-        <button>Capturar valor da Tag </button>
-      </div>
+
       <input type="submit" value="Submit">
     </form>
   </div>
 </body>
 
-
+<button>Capturar valor da Tag </button> 
 
 <!--
+
 <div>{{ form.nome }}</div>
 <div>{{ form.cargo }}</div>
 <div>{{ form.cartao }}</div>

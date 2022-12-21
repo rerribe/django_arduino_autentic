@@ -12,14 +12,10 @@ btn.addEventListener("click", function() {
 		url: 'resposta_arduino',
 		success: function(response){
 			troca_valor.value = response.chave
-			console.log(response.chave)
+			alert(response.chave)
 			console.log('ae, mto bem')
 		},
-		error: function(error){
-			console.log('erro',error)
-		}
-	})
-	
+	});	
 });
 
 
